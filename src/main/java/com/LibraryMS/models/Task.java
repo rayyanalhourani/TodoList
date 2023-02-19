@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Table(name="tasks")
 public class Task {
 
     @Id

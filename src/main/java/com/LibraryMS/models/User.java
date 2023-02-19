@@ -1,11 +1,13 @@
 package com.LibraryMS.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -33,12 +35,13 @@ public class User {
     private String email;
 
     @Column(name="dob")
-    private String dob;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private LocalDate dob;
 
     @Column(name="password")
     private String password;
 
-    public User(String first_name, String last_name, String email, String dob, String city, String password) {
+    public User(String first_name, String last_name, String email, LocalDate dob, String city, String password) {
         this.first_name = first_name;
         Last_name = last_name;
         this.email = email;
@@ -78,11 +81,11 @@ public class User {
         this.email = email;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
