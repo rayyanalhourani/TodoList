@@ -25,7 +25,7 @@ public class TaskService {
     public String deleteTask(int id){
         Task task = dao.getById(id);
         dao.delete(task);
-        return "User has been deleted";
+        return "task has been deleted";
     }
 
     public String updateTask(Task task){
@@ -33,9 +33,8 @@ public class TaskService {
         return "task has been updated";
     }
 
-    public String updateLeftTime(int id,Long time){
-        Task task = dao.getById(id);
-        task.setTimeLeft(time);
+    public String updateLeftTime(Task task){
+        dao.save(task);
         return "the time has been updated";
     }
 

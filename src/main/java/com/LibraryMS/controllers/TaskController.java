@@ -23,18 +23,14 @@ public class TaskController {
         return taskService.addTask(task);
     }
 
-    @PostMapping("/deleteTask/{id}")
+    @DeleteMapping("/deleteTask/{id}")
     public String deleteTask(@PathVariable("id") int id){
         return taskService.deleteTask(id);
     }
 
-    @PostMapping("/EditTask")
+    @PutMapping("/EditTask")
     public String EditTask(@RequestBody Task task){
         return taskService.updateTask(task);
     }
 
-    @PostMapping("/EditTask/{id}/{timeleft}")
-    public String EditTimeLeft(@PathVariable("id") int id,@PathVariable("timeleft") Long timeleft){
-        return taskService.updateLeftTime(id,timeleft);
-    }
 }
