@@ -3,6 +3,7 @@ package com.LibraryMS.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,7 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 
 
-@Table(name="Users")
+@Table(name="Users",uniqueConstraints = @UniqueConstraint(columnNames = {"user_id","email"}))
+
 public class User implements UserDetails {
 
     @Id

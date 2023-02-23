@@ -1,6 +1,6 @@
 package com.LibraryMS.models;
 
 public enum Role {
-    User,
+    USER,
     ADMIN
 }
