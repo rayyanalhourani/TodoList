@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState ,  useEffect } from 'react'
 import AddTaskForm from './components/AddTaskForm'
 import Header from './components/Header'
+import Register from './components/Register'
 import Tasks from './components/Tasks'
 import './index.css'
 
@@ -14,10 +15,9 @@ function App() {
 
   return (
     <div className="box">
-      <Header ChangeTask={ChangeTask} AddTaskShow={AddTaskShow}/>
-
-       {(AddTaskShow ? <AddTaskForm /> : '') }
-       <Tasks />
+       <Header /> 
+      <Tasks />
+      
       
     </div>
   )
