@@ -13,6 +13,7 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @GetMapping("/gettasks")
     public List<Task> getTasks(){
         return taskService.getTasks();
