@@ -3,6 +3,7 @@ package com.TodoList.controllers;
 import com.TodoList.models.Task;
 import com.TodoList.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class TaskController {
     }
 
 
-    @PostMapping("/addTask")
+    @PostMapping(value = "/addTask" , consumes = MediaType.APPLICATION_JSON_VALUE)
     public String addTask(@RequestBody Task task){
         System.out.println(task);
         return taskService.addTask(task);

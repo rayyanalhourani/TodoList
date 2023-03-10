@@ -38,16 +38,13 @@ function App() {
     const res = await fetch('http://localhost:5000/addTask' ,
      {
     method:'POST',
-    header:{
-      'Content-Type': 'application/json'
+    headers: {
+      "Content-Type": "application/json",
     },
     body:JSON.stringify(task)
   })
-
     const data = res.json()
-
     setTasks([...tasks , data])
-    
   }
 
 

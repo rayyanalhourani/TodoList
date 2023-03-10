@@ -10,7 +10,7 @@ const AddTaskForm = ({addTask}) => {
       let duration = document.getElementById('duration').value
       document.getElementById('name').value=''
       document.getElementById('duration').value=''
-      console.log('hi');
+      duration =  parseInt(duration.substring(0,2))*60 + parseInt(duration.substring(3,5))
       const task = {
         'name':name,
         'duration':duration,
