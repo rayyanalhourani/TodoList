@@ -33,8 +33,6 @@ function App() {
   }
 
   const addTask = async(task) =>{
-    console.log(task);
-    console.log(JSON.stringify(task));
     const res = await fetch('http://localhost:5000/addTask' ,
      {
     method:'POST',
@@ -54,9 +52,12 @@ function App() {
 
   return (
     <div className="box">
+      
        <Header ChangeTask={ChangeTask} AddTaskShow={AddTaskShow}/>
         {(AddTaskShow ? <AddTaskForm addTask={addTask}/> : '') }
       <Tasks tasks={tasks} Delete={Delete}/>
+
+      <Register />
     </div>
   )
 }
